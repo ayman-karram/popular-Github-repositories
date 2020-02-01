@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6A66357623E5D58800F47009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66357523E5D58800F47009 /* AppDelegate.swift */; };
-		6A66357823E5D58800F47009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66357723E5D58800F47009 /* SceneDelegate.swift */; };
 		6A66357A23E5D58800F47009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66357923E5D58800F47009 /* ViewController.swift */; };
 		6A66357D23E5D58800F47009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66357B23E5D58800F47009 /* Main.storyboard */; };
 		6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A66357E23E5D58900F47009 /* Assets.xcassets */; };
 		6A66358223E5D58900F47009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66358023E5D58900F47009 /* LaunchScreen.storyboard */; };
 		6A66358D23E5D58900F47009 /* PopularGithubRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66358C23E5D58900F47009 /* PopularGithubRepositoriesTests.swift */; };
+		6A66359B23E5D73B00F47009 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A66359A23E5D73B00F47009 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		6A66357223E5D58800F47009 /* PopularGithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularGithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A66357523E5D58800F47009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A66357723E5D58800F47009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6A66357923E5D58800F47009 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A66357C23E5D58800F47009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A66357E23E5D58900F47009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		6A66358823E5D58900F47009 /* PopularGithubRepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopularGithubRepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A66358C23E5D58900F47009 /* PopularGithubRepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGithubRepositoriesTests.swift; sourceTree = "<group>"; };
 		6A66358E23E5D58900F47009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A66359A23E5D73B00F47009 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +79,11 @@
 		6A66357423E5D58800F47009 /* PopularGithubRepositories */ = {
 			isa = PBXGroup;
 			children = (
-				6A66357523E5D58800F47009 /* AppDelegate.swift */,
-				6A66357723E5D58800F47009 /* SceneDelegate.swift */,
+				6A66359923E5D6B500F47009 /* Network */,
+				6A66359823E5D6AE00F47009 /* Modules */,
+				6A66359723E5D6A700F47009 /* Application */,
 				6A66357923E5D58800F47009 /* ViewController.swift */,
 				6A66357B23E5D58800F47009 /* Main.storyboard */,
-				6A66357E23E5D58900F47009 /* Assets.xcassets */,
-				6A66358023E5D58900F47009 /* LaunchScreen.storyboard */,
-				6A66358323E5D58900F47009 /* Info.plist */,
 			);
 			path = PopularGithubRepositories;
 			sourceTree = "<group>";
@@ -97,6 +95,40 @@
 				6A66358E23E5D58900F47009 /* Info.plist */,
 			);
 			path = PopularGithubRepositoriesTests;
+			sourceTree = "<group>";
+		};
+		6A66359723E5D6A700F47009 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6A66358323E5D58900F47009 /* Info.plist */,
+				6A66357523E5D58800F47009 /* AppDelegate.swift */,
+				6A66359C23E5D75000F47009 /* Resources */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6A66359823E5D6AE00F47009 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6A66359923E5D6B500F47009 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6A66359C23E5D75000F47009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A66359A23E5D73B00F47009 /* Default-568h@2x.png */,
+				6A66358023E5D58900F47009 /* LaunchScreen.storyboard */,
+				6A66357E23E5D58900F47009 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A66358223E5D58900F47009 /* LaunchScreen.storyboard in Resources */,
+				6A66359B23E5D73B00F47009 /* Default-568h@2x.png in Resources */,
 				6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */,
 				6A66357D23E5D58800F47009 /* Main.storyboard in Resources */,
 			);
@@ -202,7 +235,6 @@
 			files = (
 				6A66357A23E5D58800F47009 /* ViewController.swift in Sources */,
 				6A66357623E5D58800F47009 /* AppDelegate.swift in Sources */,
-				6A66357823E5D58800F47009 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +396,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MW98PXXQAT;
-				INFOPLIST_FILE = PopularGithubRepositories/Info.plist;
+				INFOPLIST_FILE = PopularGithubRepositories/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PopularGithubRepositories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +415,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MW98PXXQAT;
-				INFOPLIST_FILE = PopularGithubRepositories/Info.plist;
+				INFOPLIST_FILE = PopularGithubRepositories/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PopularGithubRepositories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
