@@ -132,6 +132,7 @@
 		6A66359823E5D6AE00F47009 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6A6635BA23E619C600F47009 /* RepositoriesList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -199,6 +200,45 @@
 				6A6635B823E617E800F47009 /* URLRequestExtentionTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		6A6635BA23E619C600F47009 /* RepositoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				6A6635BE23E619FA00F47009 /* Coordinators */,
+				6A6635BD23E619F400F47009 /* ViewModels */,
+				6A6635BC23E619EE00F47009 /* Views */,
+				6A6635BB23E619E800F47009 /* Models */,
+			);
+			path = RepositoriesList;
+			sourceTree = "<group>";
+		};
+		6A6635BB23E619E800F47009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A6635BC23E619EE00F47009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6A6635BD23E619F400F47009 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6A6635BE23E619FA00F47009 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

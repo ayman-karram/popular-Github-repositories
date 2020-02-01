@@ -16,7 +16,14 @@ class NetworkManager {
         self.session = session
     }
 
-    private func request<T>(type: T.Type, service: ServiceProtocol, completion: @escaping (NetworkResponse<T>) -> ()) where T: Decodable {
+    /**
+       Call this method to perfom a web service of type `ServiceProtocol`
+       - Parameter type: is generic type should be a model that confirm to `Codable` protocol
+       - Parameter completion: result of type `NetworkResponse`.
+       */
+    private func request<T>(type: T.Type,
+                            service: ServiceProtocol,
+                            completion: @escaping (NetworkResponse<T>) -> ()) where T: Decodable {
         let request = URLRequest(service: service)
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
@@ -25,7 +32,9 @@ class NetworkManager {
         task.resume()
     }
 
-    private func handleDataResponse<T: Decodable>(data: Data?, response: HTTPURLResponse?, error: Error?, completion: (NetworkResponse<T>) -> ()) {
+    private func handleDataResponse<T: Decodable>(data: Data?,
+                                                  response: HTTPURLResponse?,
+                                                  error: Error?, completion: (NetworkResponse<T>) -> ()) {
         guard error == nil else { return completion(.failure(.unknown)) }
         guard let response = response else { return completion(.failure(.noJSONData)) }
         switch response.statusCode {
