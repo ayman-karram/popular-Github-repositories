@@ -23,6 +23,7 @@
 		6A6635B023E5E15000F47009 /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635AF23E5E15000F47009 /* URLComponentsExtension.swift */; };
 		6A6635B223E5E26000F47009 /* NetworkServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635B123E5E26000F47009 /* NetworkServerClient.swift */; };
 		6A6635B723E60EFC00F47009 /* URLComponentsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635B623E60EFC00F47009 /* URLComponentsExtensionTests.swift */; };
+		6A6635B923E617E800F47009 /* URLRequestExtentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635B823E617E800F47009 /* URLRequestExtentionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6A6635AF23E5E15000F47009 /* URLComponentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
 		6A6635B123E5E26000F47009 /* NetworkServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServerClient.swift; sourceTree = "<group>"; };
 		6A6635B623E60EFC00F47009 /* URLComponentsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtensionTests.swift; sourceTree = "<group>"; };
+		6A6635B823E617E800F47009 /* URLRequestExtentionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtentionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				6A6635AF23E5E15000F47009 /* URLComponentsExtension.swift */,
-				6A6635AB23E5E12600F47009 /* URLSessionExtension.swift */,
 				6A6635AD23E5E13800F47009 /* URLRequestExtention.swift */,
+				6A6635AB23E5E12600F47009 /* URLSessionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				6A6635B623E60EFC00F47009 /* URLComponentsExtensionTests.swift */,
+				6A6635B823E617E800F47009 /* URLRequestExtentionTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6635B923E617E800F47009 /* URLRequestExtentionTests.swift in Sources */,
 				6A66358D23E5D58900F47009 /* PopularGithubRepositoriesTests.swift in Sources */,
 				6A6635B723E60EFC00F47009 /* URLComponentsExtensionTests.swift in Sources */,
 			);

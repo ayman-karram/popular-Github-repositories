@@ -46,7 +46,7 @@ final class MockService: ServiceProtocol {
     }
 
     var headers: RequestHeaders? {
-        return nil
+        return ["mockHeader": "value"]
     }
 
     var parametersEncoding: ParametersEncoding {
