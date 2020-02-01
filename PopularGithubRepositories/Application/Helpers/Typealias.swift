@@ -8,6 +8,6 @@
 
 import Foundation
 
-typealias Parameters = [String: [String]]
+typealias Parameters = [String: String]
 typealias RequestHeaders = [String: String]
 typealias DataTaskResult = (Data?, URLResponse?, Error?) -> ()

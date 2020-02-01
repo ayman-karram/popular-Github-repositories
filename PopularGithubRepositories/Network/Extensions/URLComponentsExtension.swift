@@ -1,5 +1,5 @@
 //
-//  URLComponents.swift
+//  URLComponentsExtension.swift
 //  PopularGithubRepositories
 //
 //  Created by Ayman Karram on 01.02.20.
@@ -12,12 +12,11 @@ extension URLComponents {
     init(service: ServiceProtocol) {
         let url = service.baseURL.appendingPathComponent(service.path)
         self.init(url: url, resolvingAgainstBaseURL: false)!
-        guard case let .requestParameters(parameters) = service.task, service.parametersEncoding == .url else { return }
+        guard case let .requestParameters(parameters) = service.task,
+            service.parametersEncoding == .url else { return }
         queryItems = []
         for (key, value) in parameters {
-            for keyValue in value {
-                queryItems?.append(URLQueryItem(name: key, value: String(describing: keyValue)))
-            }
+            queryItems?.append(URLQueryItem(name: key, value: String(describing: value)))
         }
     }
 }
