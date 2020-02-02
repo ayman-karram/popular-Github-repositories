@@ -21,6 +21,7 @@ class RepositoriesListViewModel {
     private (set) var state: Bindable<RepositoriesListState> = Bindable(.loading)
     private let networkServerClient: NetworkServerClient
     private var searchResponse: SearchResponse?
+    private (set) var repositoriesCellsViewModels: Bindable<[RepositoryCellViewModel]> = Bindable([])
 
     //MARK:- init
     //init RepositoriesListViewModel with dependency injection of network server client object
@@ -39,6 +40,7 @@ class RepositoriesListViewModel {
                                                     case .success(let searchResponse):
                                                         self?.state.value = .finishedFetchingPage
                                                         self?.searchResponse = searchResponse
+                                                        self?.repositoriesCellsViewModels.value = searchResponse.repositories.compactMap { RepositoryCellViewModel(repository: $0)}
                                                     case .failure(let error):
                                                         self?.state.value = .error(error)
                                                     }

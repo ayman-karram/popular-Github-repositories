@@ -15,9 +15,10 @@ struct Repository: Codable {
     var description: String
     var forksCount: Double
     var stargazersCount: Double
+    var owner: Owner
 
     enum CodingKeys: String, CodingKey {
-        case id, name, description
+        case id, name, description, owner
         case forksCount = "forks_count"
         case stargazersCount = "stargazers_count"
     }

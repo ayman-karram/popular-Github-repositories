@@ -37,6 +37,7 @@
 		6A6635DF23E7130700F47009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635DE23E7130700F47009 /* AppDelegate.swift */; };
 		6A6635E323E75B3900F47009 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635E123E75B3900F47009 /* RepositoryTableViewCell.swift */; };
 		6A6635E423E75B3900F47009 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6635E223E75B3900F47009 /* RepositoryTableViewCell.xib */; };
+		6A6635E623E75FC500F47009 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		6A6635DE23E7130700F47009 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A6635E123E75B3900F47009 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		6A6635E223E75B3900F47009 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				6A6635C823E6FC9600F47009 /* RepositoriesListViewModel.swift */,
+				6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				6A6635D723E70FF300F47009 /* Coordinator.swift in Sources */,
 				6A6635CB23E7017600F47009 /* Bindable.swift in Sources */,
 				6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */,
+				6A6635E623E75FC500F47009 /* RepositoryCellViewModel.swift in Sources */,
 				6A6635DF23E7130700F47009 /* AppDelegate.swift in Sources */,
 				6A6635C723E627FC00F47009 /* Owner.swift in Sources */,
 				6A6635C323E626DF00F47009 /* SearchResponse.swift in Sources */,
