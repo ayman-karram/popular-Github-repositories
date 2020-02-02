@@ -10,6 +10,9 @@ import UIKit
 
 class RepositoriesListViewController: UIViewController {
 
+    //MARK:- Properties
+    @IBOutlet weak var repositoriesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
