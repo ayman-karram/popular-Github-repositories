@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A66357623E5D58800F47009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66357523E5D58800F47009 /* AppDelegate.swift */; };
-		6A66357A23E5D58800F47009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66357923E5D58800F47009 /* ViewController.swift */; };
-		6A66357D23E5D58800F47009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66357B23E5D58800F47009 /* Main.storyboard */; };
 		6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A66357E23E5D58900F47009 /* Assets.xcassets */; };
 		6A66358223E5D58900F47009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66358023E5D58900F47009 /* LaunchScreen.storyboard */; };
 		6A66358D23E5D58900F47009 /* PopularGithubRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66358C23E5D58900F47009 /* PopularGithubRepositoriesTests.swift */; };
@@ -37,6 +34,7 @@
 		6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635D823E710F800F47009 /* RepositoriesListViewController.swift */; };
 		6A6635DB23E710F800F47009 /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6635D923E710F800F47009 /* RepositoriesListViewController.xib */; };
 		6A6635DD23E7113200F47009 /* RepositoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635DC23E7113200F47009 /* RepositoriesListCoordinator.swift */; };
+		6A6635DF23E7130700F47009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635DE23E7130700F47009 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +49,6 @@
 
 /* Begin PBXFileReference section */
 		6A66357223E5D58800F47009 /* PopularGithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularGithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A66357523E5D58800F47009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A66357923E5D58800F47009 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6A66357C23E5D58800F47009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A66357E23E5D58900F47009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A66358123E5D58900F47009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A66358323E5D58900F47009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +79,7 @@
 		6A6635D823E710F800F47009 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		6A6635D923E710F800F47009 /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
 		6A6635DC23E7113200F47009 /* RepositoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListCoordinator.swift; sourceTree = "<group>"; };
+		6A6635DE23E7130700F47009 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +124,6 @@
 				6A66359723E5D6A700F47009 /* Application */,
 				6A66359823E5D6AE00F47009 /* Modules */,
 				6A66359923E5D6B500F47009 /* Network */,
-				6A66357923E5D58800F47009 /* ViewController.swift */,
-				6A66357B23E5D58800F47009 /* Main.storyboard */,
 			);
 			path = PopularGithubRepositories;
 			sourceTree = "<group>";
@@ -149,8 +143,8 @@
 		6A66359723E5D6A700F47009 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				6A6635DE23E7130700F47009 /* AppDelegate.swift */,
 				6A66358323E5D58900F47009 /* Info.plist */,
-				6A66357523E5D58800F47009 /* AppDelegate.swift */,
 				6A6635D523E70FD900F47009 /* Protocols */,
 				6A6635A323E5DDAE00F47009 /* Helpers */,
 				6A66359C23E5D75000F47009 /* Resources */,
@@ -405,7 +399,6 @@
 				6A6635DB23E710F800F47009 /* RepositoriesListViewController.xib in Resources */,
 				6A66359B23E5D73B00F47009 /* Default-568h@2x.png in Resources */,
 				6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */,
-				6A66357D23E5D58800F47009 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,12 +424,11 @@
 				6A6635C523E6273000F47009 /* Repository.swift in Sources */,
 				6A6635AC23E5E12600F47009 /* URLSessionExtension.swift in Sources */,
 				6A66359F23E5DD4500F47009 /* ServiceProtocol.swift in Sources */,
-				6A66357A23E5D58800F47009 /* ViewController.swift in Sources */,
-				6A66357623E5D58800F47009 /* AppDelegate.swift in Sources */,
 				6A6635A223E5DD8300F47009 /* NetworkEnumComponents.swift in Sources */,
 				6A6635D723E70FF300F47009 /* Coordinator.swift in Sources */,
 				6A6635CB23E7017600F47009 /* Bindable.swift in Sources */,
 				6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */,
+				6A6635DF23E7130700F47009 /* AppDelegate.swift in Sources */,
 				6A6635C723E627FC00F47009 /* Owner.swift in Sources */,
 				6A6635C323E626DF00F47009 /* SearchResponse.swift in Sources */,
 				6A6635AE23E5E13800F47009 /* URLRequestExtention.swift in Sources */,
@@ -469,14 +461,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6A66357B23E5D58800F47009 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A66357C23E5D58800F47009 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6A66358023E5D58900F47009 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

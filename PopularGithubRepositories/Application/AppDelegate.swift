@@ -11,10 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var repositoriesListCoordinator: RepositoriesListCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        repositoriesListCoordinator = RepositoriesListCoordinator(navigationController: UINavigationController())
+        repositoriesListCoordinator?.show()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = repositoriesListCoordinator?.navigationController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
