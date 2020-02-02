@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkManager {
+class NetworkServerClient {
 
     private var session: URLSessionProtocol
 
@@ -48,7 +48,7 @@ class NetworkManager {
 }
 
 //MARK:- Repositories Services
-extension NetworkManager: PopularRepositoriesServiceProtocol {
+extension NetworkServerClient: PopularRepositoriesServiceProtocol {
     func getPopularRopositories(service: ServiceProtocol,
                                 completion: @escaping (_ result: NetworkServiceResponse<SearchResponse>) -> ()) {
         self.request(type: SearchResponse.self, service: service, completion: completion)
