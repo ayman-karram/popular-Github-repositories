@@ -10,8 +10,7 @@ import Foundation
 
 enum RepositoriesListState {
     case loading
-    case finishedFetchingPage
-    case finishFetchingAllPages
+    case finishedLoading
     case error(NetworkError?)
 }
 
@@ -36,9 +35,9 @@ class RepositoriesListViewModel {
         state.value = .loading
         networkServerClient.getPopularRopositories(service: PopularRepositoriesService(paramters: paramters),
                                                    completion: {[weak self] response in
+                                                    self?.state.value = .finishedLoading
                                                     switch response {
                                                     case .success(let searchResponse):
-                                                        self?.state.value = .finishedFetchingPage
                                                         self?.searchResponse = searchResponse
                                                         self?.repositoriesCellsViewModels.value = searchResponse.repositories.compactMap { RepositoryCellViewModel(repository: $0)}
                                                     case .failure(let error):

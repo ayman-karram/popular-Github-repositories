@@ -15,7 +15,7 @@ class RepositoriesListViewModelTests: XCTestCase {
         let networkServer = MockNetworkServerClient()
         let viewModel = RepositoriesListViewModel(networkServerClient: networkServer)
         viewModel.fetchPopularRepositories()
-        guard case RepositoriesListState.finishedFetchingPage = viewModel.state.value else {
+        guard case RepositoriesListState.finishedLoading = viewModel.state.value else {
             XCTFail()
             return
         }

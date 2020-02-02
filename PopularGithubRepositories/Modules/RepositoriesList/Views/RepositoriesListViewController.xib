@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoriesListViewController" customModule="PopularGithubRepositories" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="EqX-XY-egg" id="pt3-c3-NTF"/>
                 <outlet property="repositoriesTableView" destination="UID-Am-G6u" id="ftN-GH-Ggc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,11 +24,16 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EqX-XY-egg">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="UID-Am-G6u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EPg-d8-Fbe"/>
+                <constraint firstItem="EqX-XY-egg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IQG-aq-ES0"/>
                 <constraint firstItem="UID-Am-G6u" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SED-6G-HPn"/>
+                <constraint firstItem="EqX-XY-egg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZYO-Jm-M2m"/>
                 <constraint firstItem="UID-Am-G6u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aMG-bA-HNs"/>
                 <constraint firstItem="UID-Am-G6u" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="rg0-6a-O2J"/>
             </constraints>

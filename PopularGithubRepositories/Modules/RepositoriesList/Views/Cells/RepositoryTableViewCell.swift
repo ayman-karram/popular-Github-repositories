@@ -16,6 +16,12 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var repoDescriptionLabel: UILabel!
     @IBOutlet weak var forkNumberLabel: UILabel!
 
+    var viewModel: RepositoryCellViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         cellContinerView.layer.cornerRadius = 8
@@ -30,10 +36,8 @@ class RepositoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         self.ownerImageView.image = nil
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    private func bindViewModel() {
+
     }
 }

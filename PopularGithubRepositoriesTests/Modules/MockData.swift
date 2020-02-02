@@ -19,13 +19,13 @@ internal extension Repository {
     static func getMockRepoitory() -> Repository {
         return Repository(id: 1.0, name: "Mock Repo",
                           description: "Mock description",
-                          forksCount: 300, stargazersCount: 4000)
+                          forksCount: 300, stargazersCount: 4000, owner: Owner.getMockOwner())
     }
 }
 
 internal extension SearchResponse {
     static func getMockSearchResponse () -> SearchResponse {
-        return SearchResponse(totalCount: 100, owner: Owner.getMockOwner(),
+        return SearchResponse(totalCount: 100,
                               repositories: [Repository.getMockRepoitory()])
     }
 }
