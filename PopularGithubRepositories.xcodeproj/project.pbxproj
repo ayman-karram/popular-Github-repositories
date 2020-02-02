@@ -34,6 +34,9 @@
 		6A6635D223E7094300F47009 /* RepositoriesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635D123E7094300F47009 /* RepositoriesListViewModelTests.swift */; };
 		6A6635D423E70ABB00F47009 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635D323E70ABB00F47009 /* MockData.swift */; };
 		6A6635D723E70FF300F47009 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635D623E70FF300F47009 /* Coordinator.swift */; };
+		6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635D823E710F800F47009 /* RepositoriesListViewController.swift */; };
+		6A6635DB23E710F800F47009 /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6635D923E710F800F47009 /* RepositoriesListViewController.xib */; };
+		6A6635DD23E7113200F47009 /* RepositoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635DC23E7113200F47009 /* RepositoriesListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		6A6635D123E7094300F47009 /* RepositoriesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewModelTests.swift; sourceTree = "<group>"; };
 		6A6635D323E70ABB00F47009 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		6A6635D623E70FF300F47009 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6A6635D823E710F800F47009 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
+		6A6635D923E710F800F47009 /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
+		6A6635DC23E7113200F47009 /* RepositoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +257,8 @@
 		6A6635BC23E619EE00F47009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A6635D823E710F800F47009 /* RepositoriesListViewController.swift */,
+				6A6635D923E710F800F47009 /* RepositoriesListViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 		6A6635BE23E619FA00F47009 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				6A6635DC23E7113200F47009 /* RepositoriesListCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A66358223E5D58900F47009 /* LaunchScreen.storyboard in Resources */,
+				6A6635DB23E710F800F47009 /* RepositoriesListViewController.xib in Resources */,
 				6A66359B23E5D73B00F47009 /* Default-568h@2x.png in Resources */,
 				6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */,
 				6A66357D23E5D58800F47009 /* Main.storyboard in Resources */,
@@ -414,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6635B023E5E15000F47009 /* URLComponentsExtension.swift in Sources */,
+				6A6635DD23E7113200F47009 /* RepositoriesListCoordinator.swift in Sources */,
 				6A6635C923E6FC9600F47009 /* RepositoriesListViewModel.swift in Sources */,
 				6A6635A923E5E06D00F47009 /* URLSessionProtocol.swift in Sources */,
 				6A6635B223E5E26000F47009 /* NetworkServerClient.swift in Sources */,
@@ -425,6 +436,7 @@
 				6A6635A223E5DD8300F47009 /* NetworkEnumComponents.swift in Sources */,
 				6A6635D723E70FF300F47009 /* Coordinator.swift in Sources */,
 				6A6635CB23E7017600F47009 /* Bindable.swift in Sources */,
+				6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */,
 				6A6635C723E627FC00F47009 /* Owner.swift in Sources */,
 				6A6635C323E626DF00F47009 /* SearchResponse.swift in Sources */,
 				6A6635AE23E5E13800F47009 /* URLRequestExtention.swift in Sources */,
