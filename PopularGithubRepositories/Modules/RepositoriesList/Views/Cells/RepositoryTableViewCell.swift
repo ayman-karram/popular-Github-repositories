@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import Nuke
 
 class RepositoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellContinerView: UIView!
     @IBOutlet weak var ownerImageView: UIImageView!
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
-    @IBOutlet weak var forkNumberLabel: UILabel!
 
     var viewModel: RepositoryCellViewModel? {
         didSet {
@@ -24,10 +23,6 @@ class RepositoryTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellContinerView.layer.cornerRadius = 8
-        cellContinerView.layer.masksToBounds = true
-        cellContinerView.layer.borderColor = UIColor.white.cgColor
-        cellContinerView.layer.borderWidth = 1
         ownerImageView.layer.cornerRadius = 35
         ownerImageView.layer.masksToBounds = true
         ownerImageView.backgroundColor = UIColor.gray
@@ -38,6 +33,12 @@ class RepositoryTableViewCell: UITableViewCell {
     }
 
     private func bindViewModel() {
-
+        guard let viewModel = viewModel else { return }
+        if let imageURL = viewModel.ownerImageURL {
+            let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.5))
+            Nuke.loadImage(with: imageURL, options: options, into: ownerImageView)
+        }
+        repoNameLabel.text = viewModel.name
+        repoDescriptionLabel.text = viewModel.description
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,7 @@
 		6A6635E323E75B3900F47009 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635E123E75B3900F47009 /* RepositoryTableViewCell.swift */; };
 		6A6635E423E75B3900F47009 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6635E223E75B3900F47009 /* RepositoryTableViewCell.xib */; };
 		6A6635E623E75FC500F47009 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */; };
+		6A6635E923E76F4D00F47009 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6635E823E76F4D00F47009 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6635E923E76F4D00F47009 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +349,9 @@
 			dependencies = (
 			);
 			name = PopularGithubRepositories;
+			packageProductDependencies = (
+				6A6635E823E76F4D00F47009 /* Nuke */,
+			);
 			productName = PopularGithubRepositories;
 			productReference = 6A66357223E5D58800F47009 /* PopularGithubRepositories.app */;
 			productType = "com.apple.product-type.application";
@@ -397,6 +402,9 @@
 				Base,
 			);
 			mainGroup = 6A66356923E5D58800F47009;
+			packageReferences = (
+				6A6635E723E76F4D00F47009 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 6A66357323E5D58800F47009 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -719,6 +727,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6A6635E723E76F4D00F47009 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A6635E823E76F4D00F47009 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A6635E723E76F4D00F47009 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A66356A23E5D58800F47009 /* Project object */;
 }

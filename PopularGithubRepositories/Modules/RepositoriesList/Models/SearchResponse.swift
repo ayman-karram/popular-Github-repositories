@@ -15,6 +15,6 @@ struct SearchResponse: Codable {
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
-        case repositories = "itmes"
+        case repositories = "items"
     }
 }
