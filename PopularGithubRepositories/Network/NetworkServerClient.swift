@@ -23,7 +23,7 @@ class NetworkManager {
        */
     private func request<T>(type: T.Type,
                             service: ServiceProtocol,
-                            completion: @escaping (NetworkResponse<T>) -> ()) where T: Decodable {
+                            completion: @escaping (NetworkServiceResponse<T>) -> ()) where T: Decodable {
         let request = URLRequest(service: service)
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
@@ -34,7 +34,7 @@ class NetworkManager {
 
     private func handleDataResponse<T: Decodable>(data: Data?,
                                                   response: HTTPURLResponse?,
-                                                  error: Error?, completion: (NetworkResponse<T>) -> ()) {
+                                                  error: Error?, completion: (NetworkServiceResponse<T>) -> ()) {
         guard error == nil else { return completion(.failure(.unknown)) }
         guard let response = response else { return completion(.failure(.noJSONData)) }
         switch response.statusCode {
@@ -44,5 +44,13 @@ class NetworkManager {
         default:
             completion(.failure(.unknown))
         }
+    }
+}
+
+//MARK:- Repositories Services
+extension NetworkManager: PopularRepositoriesServiceProtocol {
+    func getPopularRopositories(service: ServiceProtocol,
+                                completion: @escaping (_ result: NetworkServiceResponse<SearchResponse>) -> ()) {
+        self.request(type: SearchResponse.self, service: service, completion: completion)
     }
 }

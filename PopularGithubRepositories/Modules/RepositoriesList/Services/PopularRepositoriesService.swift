@@ -35,8 +35,13 @@ class PopularRepositoriesService: ServiceProtocol {
     var headers: RequestHeaders? {
         return nil
     }
-
+    
     var parametersEncoding: ParametersEncoding {
         return .url
     }
+}
+
+protocol PopularRepositoriesServiceProtocol {
+    func getPopularRopositories(service: ServiceProtocol,
+                                completion: @escaping (_ result: NetworkServiceResponse<SearchResponse>) -> ())
 }
