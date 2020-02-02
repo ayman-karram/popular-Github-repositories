@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkServerClient {
+class NetworkServerClient: PopularRepositoriesServiceProtocol {
 
     private var session: URLSessionProtocol
 
@@ -45,10 +45,8 @@ class NetworkServerClient {
             completion(.failure(.unknown))
         }
     }
-}
 
-//MARK:- Repositories Services
-extension NetworkServerClient: PopularRepositoriesServiceProtocol {
+    //MARK:- Repositories Services
     func getPopularRopositories(service: ServiceProtocol,
                                 completion: @escaping (_ result: NetworkServiceResponse<SearchResponse>) -> ()) {
         self.request(type: SearchResponse.self, service: service, completion: completion)
