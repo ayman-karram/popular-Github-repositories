@@ -13,7 +13,9 @@ class RepositoryDetailsViewModel {
     //MARK:- Properties
     private (set) var state: Bindable<FetchingServiceState> = Bindable(.loading)
     private let networkServerClient: NetworkServerClient
-    private var repository: Repository?
+    private var repository: Bindable<Repository?>
+    private let refreshTime = 10 // Refreshing time in seconds
+    private var refreshServiceTimer: Timer?
 
     //MARK:- init
     //init RepositoriesListViewModel with dependency injection of network server client object
@@ -21,22 +23,33 @@ class RepositoryDetailsViewModel {
     init(networkServerClient: NetworkServerClient = NetworkServerClient(),
          repository: Repository) {
         self.networkServerClient = networkServerClient
-        self.repository = repository
+        self.repository = Bindable(repository)
+        startRefreshTimer()
     }
-    
+
+    deinit {
+        refreshServiceTimer?.invalidate()
+    }
+
     //MARK:- Helpers
     func fetchRepositoryDetails(){
-        guard let ownerName = repository?.owner.login, let repositoryName = repository?.name else {return}
+        guard let ownerName = repository.value?.owner.login, let repositoryName = repository.value?.name else {return}
         state.value = .loading
         networkServerClient.getRepositoryDetails(service: RepositoryDetailsService(ownerName: ownerName, repositoryName: repositoryName),
                                                  completion: {[weak self] response in
                                                     self?.state.value = .finishedLoading
                                                     switch response {
                                                     case .success(let repository):
-                                                        self?.repository = repository
+                                                        self?.repository.value = repository
                                                     case .failure(let error):
                                                         self?.state.value = .error(error)
                                                     }
+        })
+    }
+
+    private func startRefreshTimer(){
+        self.refreshServiceTimer = Timer(timeInterval: TimeInterval(refreshTime), repeats: true, block: { [weak self] _ in
+            self?.fetchRepositoryDetails()
         })
     }
 }

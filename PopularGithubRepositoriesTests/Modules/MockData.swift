@@ -11,7 +11,7 @@ import Foundation
 
 internal extension Owner {
    static func getMockOwner() -> Owner {
-        return  Owner(avatarUrl: "https://avatars2.githubusercontent.com/u/484656?v=4")
+        return  Owner(avatarUrl: "https://avatars2.githubusercontent.com/u/484656?v=4",login: "Mock Owner")
     }
 }
 
