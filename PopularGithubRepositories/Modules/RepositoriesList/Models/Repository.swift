@@ -13,8 +13,8 @@ struct Repository: Codable {
     var id: Double
     var name: String
     var description: String
-    var forksCount: Double
-    var stargazersCount: Double
+    var forksCount: Int
+    var stargazersCount: Int
     var owner: Owner
 
     enum CodingKeys: String, CodingKey {

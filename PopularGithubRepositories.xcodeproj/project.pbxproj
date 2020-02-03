@@ -175,8 +175,8 @@
 		6A66359823E5D6AE00F47009 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6AB260BB23E8992B008B8F51 /* RepositoryDetails */,
 				6A6635BA23E619C600F47009 /* RepositoriesList */,
+				6AB260BB23E8992B008B8F51 /* RepositoryDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoriesListViewController: UIViewController {
     
-    //MARK:- Properties
+    //MARK:- IBOutlet
     @IBOutlet weak var repositoriesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -38,6 +38,8 @@ class RepositoriesListViewController: UIViewController {
     //MARK:- Helpers
     private func setupView(){
         navigationItem.titleView = UIImageView(image: githubIcon)
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
         setUpTableView()
     }
     

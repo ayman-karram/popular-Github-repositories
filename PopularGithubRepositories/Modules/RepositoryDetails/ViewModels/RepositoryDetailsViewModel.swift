@@ -11,9 +11,8 @@ import Foundation
 class RepositoryDetailsViewModel {
 
     //MARK:- Properties
-    private (set) var state: Bindable<FetchingServiceState> = Bindable(.loading)
     private let networkServerClient: NetworkServerClient
-    private var repository: Bindable<Repository?>
+    var repository: Bindable<Repository?>
     private let refreshTime = 10 // Refreshing time in seconds
     private var refreshServiceTimer: Timer?
 
@@ -34,22 +33,20 @@ class RepositoryDetailsViewModel {
     //MARK:- Helpers
     func fetchRepositoryDetails(){
         guard let ownerName = repository.value?.owner.login, let repositoryName = repository.value?.name else {return}
-        state.value = .loading
         networkServerClient.getRepositoryDetails(service: RepositoryDetailsService(ownerName: ownerName, repositoryName: repositoryName),
                                                  completion: {[weak self] response in
-                                                    self?.state.value = .finishedLoading
                                                     switch response {
                                                     case .success(let repository):
                                                         self?.repository.value = repository
-                                                    case .failure(let error):
-                                                        self?.state.value = .error(error)
+                                                    case .failure(_): break
                                                     }
         })
     }
 
     private func startRefreshTimer(){
-        self.refreshServiceTimer = Timer(timeInterval: TimeInterval(refreshTime), repeats: true, block: { [weak self] _ in
-            self?.fetchRepositoryDetails()
-        })
+        self.refreshServiceTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(refreshTime),
+                                                        repeats: true) { [weak self] _ in
+                                                            self?.fetchRepositoryDetails()
+        }
     }
 }

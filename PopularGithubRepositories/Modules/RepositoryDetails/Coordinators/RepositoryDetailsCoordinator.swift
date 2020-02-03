@@ -23,7 +23,7 @@ class RepositoryDetailsCoordinator: Coordinator {
 
     //MARK:- Helpers
     func getViewController() -> UIViewController {
-        return RepositoryDetailsViewController()
+        return RepositoryDetailsViewController(viewModel: RepositoryDetailsViewModel(repository: repository))
     }
 
     func show(present: Bool = false) {

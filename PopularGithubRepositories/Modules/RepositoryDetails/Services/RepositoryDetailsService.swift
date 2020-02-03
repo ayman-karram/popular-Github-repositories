@@ -13,7 +13,7 @@ class RepositoryDetailsService: ServiceProtocol {
     var path: String
 
     init(ownerName: String, repositoryName: String) {
-        path = ("\(ownerName)/\(repositoryName)")
+        path = ("repos/\(ownerName)/\(repositoryName)")
     }
 
     var baseURL: URL {
