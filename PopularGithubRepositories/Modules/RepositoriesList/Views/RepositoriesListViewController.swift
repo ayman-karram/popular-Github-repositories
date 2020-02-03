@@ -23,9 +23,9 @@ class RepositoriesListViewController: UIViewController {
         self.viewModel = viewModel
     }
 
-     required init(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-       }
+    }
 
     //MARK:- View Life cycle
     override func viewDidLoad() {
@@ -57,6 +57,7 @@ class RepositoriesListViewController: UIViewController {
                 self?.show(loading: false)
             case .error(_):
                 self?.show(loading: false)
+                self?.showAlertWith()
             }
         })
     }
@@ -76,6 +77,15 @@ class RepositoriesListViewController: UIViewController {
         repositoriesTableView.delegate = self
         repositoriesTableView.estimatedRowHeight = UITableView.automaticDimension
         repositoriesTableView.tableFooterView = UIView()
+    }
+
+    private func showAlertWith(){
+        let alert = SingleButtonAlert(
+            title: "Could not connect to server, Check your Internet connection and try again later.",
+            message: "",
+            action: AlertAction(buttonTitle: "OK", handler: {})
+        )
+        self.presentSingleButtonDialog(alert: alert)
     }
 }
 
