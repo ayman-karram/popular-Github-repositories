@@ -42,6 +42,9 @@
 		6AB260C223E89A5B008B8F51 /* RepositoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C123E89A5B008B8F51 /* RepositoryDetailsViewModel.swift */; };
 		6AB260C423E89E83008B8F51 /* RepositoryDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C323E89E83008B8F51 /* RepositoryDetailsService.swift */; };
 		6AB260C723E8A785008B8F51 /* RepositoryDetialsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C623E8A785008B8F51 /* RepositoryDetialsViewModelTests.swift */; };
+		6AB260CA23E8A9F8008B8F51 /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C823E8A9F8008B8F51 /* RepositoryDetailsViewController.swift */; };
+		6AB260CB23E8A9F8008B8F51 /* RepositoryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB260C923E8A9F8008B8F51 /* RepositoryDetailsViewController.xib */; };
+		6AB260CD23E8AAF5008B8F51 /* RepositoryDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260CC23E8AAF5008B8F51 /* RepositoryDetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		6AB260C123E89A5B008B8F51 /* RepositoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		6AB260C323E89E83008B8F51 /* RepositoryDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsService.swift; sourceTree = "<group>"; };
 		6AB260C623E8A785008B8F51 /* RepositoryDetialsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetialsViewModelTests.swift; sourceTree = "<group>"; };
+		6AB260C823E8A9F8008B8F51 /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
+		6AB260C923E8A9F8008B8F51 /* RepositoryDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsViewController.xib; sourceTree = "<group>"; };
+		6AB260CC23E8AAF5008B8F51 /* RepositoryDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +361,7 @@
 		6AB260BC23E89953008B8F51 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				6AB260CC23E8AAF5008B8F51 /* RepositoryDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -370,6 +377,8 @@
 		6AB260BE23E89962008B8F51 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6AB260C823E8A9F8008B8F51 /* RepositoryDetailsViewController.swift */,
+				6AB260C923E8A9F8008B8F51 /* RepositoryDetailsViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 				6A6635DB23E710F800F47009 /* RepositoriesListViewController.xib in Resources */,
 				6A66359B23E5D73B00F47009 /* Default-568h@2x.png in Resources */,
 				6A66357F23E5D58900F47009 /* Assets.xcassets in Resources */,
+				6AB260CB23E8A9F8008B8F51 /* RepositoryDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +512,8 @@
 				6AB260C223E89A5B008B8F51 /* RepositoryDetailsViewModel.swift in Sources */,
 				6A6635B023E5E15000F47009 /* URLComponentsExtension.swift in Sources */,
 				6A6635DD23E7113200F47009 /* RepositoriesListCoordinator.swift in Sources */,
+				6AB260CD23E8AAF5008B8F51 /* RepositoryDetailsCoordinator.swift in Sources */,
+				6AB260CA23E8A9F8008B8F51 /* RepositoryDetailsViewController.swift in Sources */,
 				6A6635E323E75B3900F47009 /* RepositoryTableViewCell.swift in Sources */,
 				6A6635C923E6FC9600F47009 /* RepositoriesListViewModel.swift in Sources */,
 				6A6635A923E5E06D00F47009 /* URLSessionProtocol.swift in Sources */,
