@@ -43,25 +43,6 @@ class RepositoriesListViewController: UIViewController {
         setUpTableView()
     }
     
-    private func bindViewModel() {
-        viewModel?.repositoriesCellsViewModels.bind { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.repositoriesTableView?.reloadData()
-            }
-        }
-        viewModel?.state.bind({[weak self] state in
-            switch state {
-            case .loading:
-                self?.show(loading: true)
-            case .finishedLoading:
-                self?.show(loading: false)
-            case .error(_):
-                self?.show(loading: false)
-                self?.showAlertWith()
-            }
-        })
-    }
-    
     private func show(loading: Bool) {
         DispatchQueue.main.async {
             self.repositoriesTableView.isHidden = loading
@@ -86,6 +67,26 @@ class RepositoriesListViewController: UIViewController {
             action: AlertAction(buttonTitle: "OK", handler: {})
         )
         self.presentSingleButtonDialog(alert: alert)
+    }
+
+    //MARK:- Data binding
+    private func bindViewModel() {
+        viewModel?.repositoriesCellsViewModels.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.repositoriesTableView?.reloadData()
+            }
+        }
+        viewModel?.state.bind({[weak self] state in
+            switch state {
+            case .loading:
+                self?.show(loading: true)
+            case .finishedLoading:
+                self?.show(loading: false)
+            case .error(_):
+                self?.show(loading: false)
+                self?.showAlertWith()
+            }
+        })
     }
 }
 

@@ -45,6 +45,7 @@ class RepositoryDetailsViewController: UIViewController {
         ownerImageView.backgroundColor = UIColor.gray
     }
 
+    //MARK:- Data binding
     private func bindViewModel() {
         viewModel?.repository.bindAndFire { [weak self] repository in
             DispatchQueue.main.async {
