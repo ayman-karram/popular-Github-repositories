@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol RepositoryDetailsViewModelDelegate: class {
+    func viewModelUpdated(repository: Repository)
+}
+
 class RepositoryDetailsViewModel {
 
     //MARK:- Properties
@@ -15,7 +19,8 @@ class RepositoryDetailsViewModel {
     var repository: Bindable<Repository?>
     private let refreshTime = 10 // Refreshing time in seconds
     private var refreshServiceTimer: Timer?
-
+    var delegate: RepositoryDetailsViewModelDelegate?
+    
     //MARK:- init
     //init RepositoriesListViewModel with dependency injection of network server client object
     //to be able to mock the network layer for unit testing
@@ -38,6 +43,7 @@ class RepositoryDetailsViewModel {
                                                     switch response {
                                                     case .success(let repository):
                                                         self?.repository.value = repository
+                                                        self?.delegate?.viewModelUpdated(repository: repository)
                                                     case .failure(_): break
                                                     }
         })

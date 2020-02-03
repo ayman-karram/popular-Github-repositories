@@ -44,6 +44,14 @@ extension RepositoriesListCoordinator: RepositoriesListViewModelDelegate {
     func repositoriesListViewModelDidSelect(repository: Repository) {
         let detailsPageCoordinator = RepositoryDetailsCoordinator(navigationController: self.navigationController,
                                                                   repository: repository)
+        detailsPageCoordinator.delegate = self
         detailsPageCoordinator.show()
+    }
+}
+
+//MARK:- RepositoryDetailsCoordinatorDelegate
+extension RepositoriesListCoordinator: RepositoryDetailsCoordinatorDelegate {
+    func detailsPageUpdated(repository: Repository) {
+        repositoriesListViewModel.update(repository: repository)
     }
 }

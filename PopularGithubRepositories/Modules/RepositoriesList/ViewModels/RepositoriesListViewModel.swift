@@ -19,21 +19,21 @@ protocol RepositoriesListViewModelDelegate: class {
 }
 
 class RepositoriesListViewModel {
-
+    
     //MARK:- Properties
     private (set) var state: Bindable<FetchingServiceState> = Bindable(.loading)
     private let networkServerClient: NetworkServerClient
     private var searchResponse: SearchResponse?
     private (set) var repositoriesCellsViewModels: Bindable<[RepositoryCellViewModel]> = Bindable([])
     weak var delegate: RepositoriesListViewModelDelegate?
-
+    
     //MARK:- init
     //init RepositoriesListViewModel with dependency injection of network server client object
     //to be able to mock the network layer for unit testing
     init(networkServerClient: NetworkServerClient = NetworkServerClient()) {
         self.networkServerClient = networkServerClient
     }
-
+    
     //MARK:- Helpers
     func fetchPopularRepositories(){
         let paramters = getPopularRepositoriesParamters()
@@ -50,14 +50,23 @@ class RepositoriesListViewModel {
                                                     }
         })
     }
-
+    
     private func getPopularRepositoriesParamters() -> Parameters {
         return ["q":"language:Swift", "sort": "stars", "order":"desc"]
     }
-
+    
     func didSelectItemAt(index: Int) {
         if let repository = searchResponse?.repositories[index] {
             self.delegate?.repositoriesListViewModelDidSelect(repository: repository)
+        }
+    }
+    
+    func update(repository: Repository) {
+        if let searchReposnse = self.searchResponse,
+            let index = self.searchResponse?.repositories.firstIndex(where: {$0.id == repository.id}) {
+            self.searchResponse?.repositories[index] = repository
+            self.repositoriesCellsViewModels.value = searchReposnse.repositories.compactMap {
+                RepositoryCellViewModel(repository: $0)}
         }
     }
 }

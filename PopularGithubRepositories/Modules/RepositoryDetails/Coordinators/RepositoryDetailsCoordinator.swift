@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol RepositoryDetailsCoordinatorDelegate: class {
+    func detailsPageUpdated(repository: Repository)
+}
+
 class RepositoryDetailsCoordinator: Coordinator {
 
     //MARK:- Variables
     var navigationController: UINavigationController
     var repository: Repository
+    var delegate: RepositoryDetailsCoordinatorDelegate?
 
     //MARK:- Init
     init(navigationController: UINavigationController, repository: Repository) {
@@ -23,7 +28,9 @@ class RepositoryDetailsCoordinator: Coordinator {
 
     //MARK:- Helpers
     func getViewController() -> UIViewController {
-        return RepositoryDetailsViewController(viewModel: RepositoryDetailsViewModel(repository: repository))
+        let viewModel = RepositoryDetailsViewModel(repository: repository)
+        viewModel.delegate = self
+        return RepositoryDetailsViewController(viewModel: viewModel)
     }
 
     func show(present: Bool = false) {
@@ -36,5 +43,12 @@ class RepositoryDetailsCoordinator: Coordinator {
             self.navigationController.navigationBar.prefersLargeTitles = true
             self.navigationController.pushViewController(repositoryDetailsViewController, animated: true)
         }
+    }
+}
+
+//MARK:- RepositoryDetailsViewModelDelegate
+extension RepositoryDetailsCoordinator: RepositoryDetailsViewModelDelegate {
+    func viewModelUpdated(repository: Repository) {
+        self.delegate?.detailsPageUpdated(repository: repository)
     }
 }
