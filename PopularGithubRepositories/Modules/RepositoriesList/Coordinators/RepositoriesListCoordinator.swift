@@ -12,6 +12,7 @@ class RepositoriesListCoordinator: Coordinator {
 
     //MARK:- Variables
     var navigationController: UINavigationController
+    var repositoriesListViewModel = RepositoriesListViewModel()
 
     //MARK:- Init
     init(navigationController: UINavigationController) {
@@ -20,7 +21,9 @@ class RepositoriesListCoordinator: Coordinator {
 
     //MARK:- Helpers
     func getViewController() -> UIViewController {
-        return RepositoriesListViewController()
+        let repositoriesListViewController = RepositoriesListViewController(viewModel: repositoriesListViewModel)
+        repositoriesListViewModel.delegate = self
+        return repositoriesListViewController
     }
 
     func show(present: Bool = false) {
@@ -33,5 +36,14 @@ class RepositoriesListCoordinator: Coordinator {
             self.navigationController.navigationBar.prefersLargeTitles = true
             self.navigationController.pushViewController(repositoriesListViewController, animated: true)
         }
+    }
+}
+
+//MARK:- RepositoriesListViewModelDelegate
+extension RepositoriesListCoordinator: RepositoriesListViewModelDelegate {
+    func repositoriesListViewModelDidSelect(repository: Repository) {
+        let detailsPageCoordinator = RepositoryDetailsCoordinator(navigationController: self.navigationController,
+                                                                  repository: repository)
+        detailsPageCoordinator.show()
     }
 }

@@ -14,6 +14,10 @@ enum FetchingServiceState {
     case error(NetworkError?)
 }
 
+protocol RepositoriesListViewModelDelegate: class {
+    func repositoriesListViewModelDidSelect(repository: Repository)
+}
+
 class RepositoriesListViewModel {
 
     //MARK:- Properties
@@ -21,6 +25,7 @@ class RepositoriesListViewModel {
     private let networkServerClient: NetworkServerClient
     private var searchResponse: SearchResponse?
     private (set) var repositoriesCellsViewModels: Bindable<[RepositoryCellViewModel]> = Bindable([])
+    weak var delegate: RepositoriesListViewModelDelegate?
 
     //MARK:- init
     //init RepositoriesListViewModel with dependency injection of network server client object
@@ -48,5 +53,11 @@ class RepositoriesListViewModel {
 
     private func getPopularRepositoriesParamters() -> Parameters {
         return ["q":"language:Swift", "sort": "stars", "order":"desc"]
+    }
+
+    func didSelectItemAt(index: Int) {
+        if let repository = searchResponse?.repositories[index] {
+            self.delegate?.repositoriesListViewModelDidSelect(repository: repository)
+        }
     }
 }
