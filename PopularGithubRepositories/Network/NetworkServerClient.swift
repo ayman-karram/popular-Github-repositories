@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkServerClient: PopularRepositoriesServiceProtocol {
+class NetworkServerClient: PopularRepositoriesServiceProtocol, RepositoryDetailsServiceProtocol {
 
     private var session: URLSessionProtocol
 
@@ -17,10 +17,10 @@ class NetworkServerClient: PopularRepositoriesServiceProtocol {
     }
 
     /**
-       Call this method to perfom a web service of type `ServiceProtocol`
-       - Parameter type: is generic type should be a model that confirm to `Codable` protocol
-       - Parameter completion: result of type `NetworkResponse`.
-       */
+     Call this method to perfom a web service of type `ServiceProtocol`
+     - Parameter type: is generic type should be a model that confirm to `Codable` protocol
+     - Parameter completion: result of type `NetworkResponse`.
+     */
     private func request<T>(type: T.Type,
                             service: ServiceProtocol,
                             completion: @escaping (NetworkServiceResponse<T>) -> ()) where T: Decodable {
@@ -50,5 +50,10 @@ class NetworkServerClient: PopularRepositoriesServiceProtocol {
     func getPopularRopositories(service: ServiceProtocol,
                                 completion: @escaping (_ result: NetworkServiceResponse<SearchResponse>) -> ()) {
         self.request(type: SearchResponse.self, service: service, completion: completion)
+    }
+
+    func getRepositoryDetails(service: ServiceProtocol,
+                              completion: @escaping (NetworkServiceResponse<Repository>) -> ()) {
+        self.request(type: Repository.self, service: service, completion: completion)
     }
 }
