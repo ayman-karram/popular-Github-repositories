@@ -15,7 +15,7 @@ class RepositoriesListViewModelTests: XCTestCase {
         let networkServer = MockNetworkServerClient()
         let viewModel = RepositoriesListViewModel(networkServerClient: networkServer)
         viewModel.fetchPopularRepositories()
-        guard case RepositoriesListState.finishedLoading = viewModel.state.value else {
+        guard case FetchingServiceState.finishedLoading = viewModel.state.value else {
             XCTFail()
             return
         }
@@ -26,7 +26,7 @@ class RepositoriesListViewModelTests: XCTestCase {
         networkServer.mockSearchResponse = .failure(NetworkError.unknown)
         let viewModel = RepositoriesListViewModel(networkServerClient: networkServer)
         viewModel.fetchPopularRepositories()
-        guard case RepositoriesListState.error(_) = viewModel.state.value else {
+        guard case FetchingServiceState.error(_) = viewModel.state.value else {
             XCTFail()
             return
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RepositoriesListState {
+enum FetchingServiceState {
     case loading
     case finishedLoading
     case error(NetworkError?)
@@ -17,7 +17,7 @@ enum RepositoriesListState {
 class RepositoriesListViewModel {
 
     //MARK:- Properties
-    private (set) var state: Bindable<RepositoriesListState> = Bindable(.loading)
+    private (set) var state: Bindable<FetchingServiceState> = Bindable(.loading)
     private let networkServerClient: NetworkServerClient
     private var searchResponse: SearchResponse?
     private (set) var repositoriesCellsViewModels: Bindable<[RepositoryCellViewModel]> = Bindable([])
