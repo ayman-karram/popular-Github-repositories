@@ -40,6 +40,7 @@
 		6A6635E623E75FC500F47009 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */; };
 		6A6635E923E76F4D00F47009 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6635E823E76F4D00F47009 /* Nuke */; };
 		6AB260C223E89A5B008B8F51 /* RepositoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C123E89A5B008B8F51 /* RepositoryDetailsViewModel.swift */; };
+		6AB260C423E89E83008B8F51 /* RepositoryDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB260C323E89E83008B8F51 /* RepositoryDetailsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		6A6635E223E75B3900F47009 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		6A6635E523E75FC500F47009 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		6AB260C123E89A5B008B8F51 /* RepositoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		6AB260C323E89E83008B8F51 /* RepositoryDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,7 +341,6 @@
 		6AB260BB23E8992B008B8F51 /* RepositoryDetails */ = {
 			isa = PBXGroup;
 			children = (
-				6AB260BF23E89969008B8F51 /* Models */,
 				6AB260BE23E89962008B8F51 /* Views */,
 				6AB260BD23E8995D008B8F51 /* ViewModels */,
 				6AB260C023E8996F008B8F51 /* Services */,
@@ -370,16 +371,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6AB260BF23E89969008B8F51 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		6AB260C023E8996F008B8F51 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6AB260C323E89E83008B8F51 /* RepositoryDetailsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -509,6 +504,7 @@
 				6A6635DA23E710F800F47009 /* RepositoriesListViewController.swift in Sources */,
 				6A6635E623E75FC500F47009 /* RepositoryCellViewModel.swift in Sources */,
 				6A6635DF23E7130700F47009 /* AppDelegate.swift in Sources */,
+				6AB260C423E89E83008B8F51 /* RepositoryDetailsService.swift in Sources */,
 				6A6635C723E627FC00F47009 /* Owner.swift in Sources */,
 				6A6635C323E626DF00F47009 /* SearchResponse.swift in Sources */,
 				6A6635AE23E5E13800F47009 /* URLRequestExtention.swift in Sources */,
