@@ -10,7 +10,7 @@ import Foundation
 @testable import PopularGithubRepositories
 
 internal extension Owner {
-   static func getMockOwner() -> Owner {
+    static func getMockOwner() -> Owner {
         return  Owner(avatarUrl: "https://avatars2.githubusercontent.com/u/484656?v=4",login: "Mock Owner")
     }
 }
@@ -25,7 +25,6 @@ internal extension Repository {
 
 internal extension SearchResponse {
     static func getMockSearchResponse () -> SearchResponse {
-        return SearchResponse(totalCount: 100,
-                              repositories: [Repository.getMockRepoitory()])
+        return SearchResponse(repositories: [Repository.getMockRepoitory()])
     }
 }
