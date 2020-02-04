@@ -11,10 +11,12 @@ import Nuke
 
 class RepositoryTableViewCell: UITableViewCell {
 
+    //MARK:- IBOutlet
     @IBOutlet weak var ownerImageView: UIImageView!
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
 
+    //MARK:- Variables
     var viewModel: RepositoryCellViewModel? {
         didSet {
             bindViewModel()
@@ -32,6 +34,7 @@ class RepositoryTableViewCell: UITableViewCell {
         self.ownerImageView.image = nil
     }
 
+    //MARK:- Binding Data
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
         if let imageURL = viewModel.ownerImageURL {
